@@ -80,12 +80,11 @@ I created a seperate `showError` function to display an error message and wanted
 
 I created the alert using Bootstrap class syntax: a class name of 'alert' and the colour 'danger'. I added the text by creating a text node and appended this to the div. I then used JavaSctipt's inbuilt `insertBefore` method to situation the error alert above the heading- it takes in two parameters- the element you wish to show and the element you wish to render it before.
 
-`
+```
 //create a div
   const errorDiv = document.createElement('div')
 
-`
-```
+
 //add class of alert 
   errorDiv.className = 'alert alert-danger'
   //create text node and append to div

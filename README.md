@@ -18,7 +18,8 @@ Demo can be found <a href='https://soniacweb.github.io/loancalculator/'>here</a>
 
 I wanted to start by adding in an event listener for the submit button and passing in an anonymous function which includes showing valid results and removing the spinner once the results have been rendered. I used the setTimeout method to time the calculations after a one second delay.
 
-```document.getElementById('loan-form').addEventListener('submit', function() {
+```
+document.getElementById('loan-form').addEventListener('submit', function() {
    // hide results despite already being hidden by default
   document.getElementById('results').style.display = 'none'
    

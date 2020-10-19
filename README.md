@@ -2,7 +2,9 @@
 
 A simple loan calculator app to calculate repayment taking into consideration the interest, amount borrowed, and year/s for repayment.
 
-<img src='' alt='screenshot of app'> 
+Demo can be found <a href='https://soniacweb.github.io/loancalculator/'>here</a>
+
+<img src='https://i.imgur.com/4EfDnXP.png' alt='screenshot of app' style='width:700px'> 
 
 
 # Technologies

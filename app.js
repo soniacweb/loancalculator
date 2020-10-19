@@ -29,13 +29,33 @@ function calculateResults(e) {
     totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2) 
   } else {
     //create element for error message
-    showError()
+    showError('Please check your numbers')
   }
 
   e.preventDefault()
 }
 
 
-function showError() {
-  
+function showError(error) {
+  //create a div
+  const errorDiv = document.createElement('div')
+
+  //elements
+  const card = document.querySelector('.card')
+  const heading = document.querySelector('.heading')
+
+  //add class of alert 
+  errorDiv.className = 'alert alert-danger'
+  //create text node and append to div
+  errorDiv.appendChild(document.createTextNode(error))
+
+  //insert error above heading
+  card.insertBefore(errorDiv, heading)
+
+  // clear error after 3 seconds
+  setTimeout(clearError, 2000)
+}
+
+function clearError() {
+  document.querySelector('.alert').remove()
 }

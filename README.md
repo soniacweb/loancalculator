@@ -46,12 +46,23 @@ I created an if/else statement to check if the values were finite. If true, the 
     totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2) 
   } else {
     //create element for error message
-    showError()
+    showError('Please check your numbers')
   }
 
 ```
 
-I created a seperate function to display an error message and wanted to create the element through javaScript.
+I created a seperate function to display an error message and wanted to create the ui through javaScript.
+
+I created the alert using Bootstrap class syntax: a class name of 'alert' and the colour 'danger'. I added the text by creating a text node and appended this to the div.
 
 
+
+I removed the loading image and results feature using CSS' `display: none` property and used JavaScript to display them after being triggered by events.
+
+```
+#loading, #results {
+  display: none;
+}
+
+```
 

@@ -1,10 +1,20 @@
 //listen for submit 
 
-document.getElementById('loan-form').addEventListener('submit', calculateResults)
+document.getElementById('loan-form').addEventListener('submit', function(e) {
+  // hide results despite already being hidden by default
+  document.getElementById('results').style.display = 'none'
+   
+  // show the loader as soon as it's clicked
+  document.getElementById('loading').style.display = 'block'
+
+  setTimeout(calculateResults, 1000)
+
+  e.preventDefault()
+})
 
 //calculate results - need to pass in an event parameter
  
-function calculateResults(e) {
+function calculateResults() {
   //UI variables
   const amount = document.getElementById('amount')
   const interest = document.getElementById('interest')
@@ -27,12 +37,18 @@ function calculateResults(e) {
     monthlyPayment.value = monthly.toFixed(2)
     totalPayment.value = (monthly * calculatedPayments).toFixed(2)
     totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2) 
+
+    //show results
+    document.getElementById('results').style.display = 'block'
+
+    //also hide the spiner 
+    document.getElementById('loading').style.display = 'none'
+
   } else {
     //create element for error message
     showError('Please check your numbers')
   }
 
-  e.preventDefault()
 }
 
 
@@ -52,6 +68,9 @@ function showError(error) {
   //insert error above heading
   card.insertBefore(errorDiv, heading)
 
+  //also hide the spiner 
+  document.getElementById('loading').style.display = 'none'
+    
   // clear error after 3 seconds
   setTimeout(clearError, 2000)
 }
@@ -59,3 +78,6 @@ function showError(error) {
 function clearError() {
   document.querySelector('.alert').remove()
 }
+
+
+

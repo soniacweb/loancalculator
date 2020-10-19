@@ -27,7 +27,8 @@ document.getElementById('loan-form').addEventListener('submit', function() {
   document.getElementById('loading').style.display = 'block'
 
   setTimeout(calculateResults, 1000)
-})```
+})
+```
 
 NB: Since its a form submit, I needed to include the prevent default behaviour which cancels out any default behaviour when the submit events occur.
 

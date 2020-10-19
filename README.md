@@ -108,7 +108,7 @@ function clearError() {
 }
 ```
 
-I removed the loading image and results feature using CSS' `display: none` property and used JavaScript to display them after being triggered by events.
+I removed the loading image and results feature using CSS' `display: none` property (default presentation) and used JavaScript to display them after being triggered by events.
 
 ```
 #loading, #results {
